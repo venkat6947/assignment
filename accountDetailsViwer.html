@@ -1,0 +1,16 @@
+<template>
+    <lightning-input type="search" label="Search Account" onchange={handleSearch}></lightning-input><br/><br/>
+        <template if:true={accounts}>
+            <lightning-datatable key-field="Id"
+                                 data={accounts.data} 
+                                 columns={columns} 
+                                 sorted-by={sortBy}
+                                 sorted-direction={sortDirection}
+                                 onsort={doSorting} 
+                                 onsave={handleSave}
+                                 draft-values={saveDraftValues}
+                                 hide-checkbox-column 
+                                 >
+            </lightning-datatable>
+        </template>
+</template>
